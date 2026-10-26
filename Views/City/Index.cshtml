@@ -1,0 +1,6 @@
+@model IEnumerable<City>
+@{ ViewData["Title"] = "Ciudades"; }
+<div class="d-flex justify-content-between align-items-center mb-3"><h1 class="page-title">Ciudades y países</h1><a asp-action="Create" class="btn btn-primary">+ Nueva ciudad</a></div>
+<div class="card p-3 shadow-sm"><div class="table-responsive"><table class="table table-hover mb-0"><thead class="table-light"><tr><th>ID</th><th>Ciudad</th><th>País relacionado (JOIN)</th><th>Acciones</th></tr></thead><tbody>
+@foreach (var item in Model) { <tr><td>@item.CityId</td><td>@item.CityName</td><td>@item.CountryName</td><td class="text-nowrap"><a asp-action="Details" asp-route-id="@item.CityId" class="btn btn-sm btn-outline-secondary">Detalles</a> <a asp-action="Edit" asp-route-id="@item.CityId" class="btn btn-sm btn-outline-primary">Editar</a> <a asp-action="Delete" asp-route-id="@item.CityId" class="btn btn-sm btn-outline-danger">Eliminar</a></td></tr> }
+</tbody></table></div></div>

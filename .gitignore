@@ -1,0 +1,9 @@
+# Ignorar archivos Markdown solicitados
+*.md
+
+# Ignorar directorios de compilación y Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo

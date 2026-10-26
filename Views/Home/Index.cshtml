@@ -1,0 +1,14 @@
+@model Dashboard
+@{
+    ViewData["Title"] = "Inicio";
+}
+<div class="p-4 p-md-5 bg-white rounded-4 shadow-sm mb-4">
+    <span class="badge text-bg-primary mb-2">ASP.NET Core MVC + ADO.NET</span>
+    <h1 class="page-title">Panel Sakila</h1>
+    <p class="text-muted mb-0">Administración de países y ciudades con relación 1:N mediante SQL Server.</p>
+</div>
+<div class="row g-4 mb-4">
+    <div class="col-md-6"><div class="card shadow-sm p-4"><div class="text-muted">Países registrados</div><div class="metric">@Model.TotalCountries</div><a asp-controller="Country" asp-action="Index">Administrar países →</a></div></div>
+    <div class="col-md-6"><div class="card shadow-sm p-4"><div class="text-muted">Ciudades registradas</div><div class="metric">@Model.TotalCities</div><a asp-controller="City" asp-action="Index">Administrar ciudades →</a></div></div>
+</div>
+<div class="card p-4 shadow-sm"><h2 class="h5">Relación de tablas</h2><p class="mb-0"><strong>country.country_id (PK)</strong> → <strong>city.country_id (FK)</strong>. Un país puede tener muchas ciudades; cada ciudad pertenece a un país.</p></div>

@@ -1,0 +1,4 @@
+@model Country
+@{ ViewData["Title"] = "Detalle de país"; }
+<h1 class="page-title">Detalle del país</h1>
+<div class="card p-4 shadow-sm"><dl class="row"><dt class="col-sm-4">Identificador</dt><dd class="col-sm-8">@Model.CountryId</dd><dt class="col-sm-4">País</dt><dd class="col-sm-8">@Model.CountryName</dd><dt class="col-sm-4">Ciudades relacionadas</dt><dd class="col-sm-8">@Model.CityCount</dd><dt class="col-sm-4">Última actualización</dt><dd class="col-sm-8">@Model.LastUpdate</dd></dl><div><a asp-action="Edit" asp-route-id="@Model.CountryId" class="btn btn-primary">Editar</a> <a asp-action="Index" class="btn btn-outline-secondary">Volver</a></div></div>

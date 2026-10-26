@@ -1,0 +1,6 @@
+@model City
+@{ ViewData["Title"] = "Eliminar ciudad"; }
+<h1 class="page-title">Eliminar ciudad</h1>
+<div class="card p-4 shadow-sm"><p>¿Confirmas eliminar la ciudad <strong>@Model.CityName</strong> de <strong>@Model.CountryName</strong>?</p>
+<p class="text-muted">Si existen otros registros relacionados, SQL Server puede impedir la eliminación.</p>
+<form asp-action="Delete" asp-route-id="@Model.CityId" method="post"><button type="submit" class="btn btn-danger">Confirmar eliminación</button> <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a></form></div>

@@ -1,0 +1,6 @@
+@model Country
+@{ ViewData["Title"] = "Eliminar país"; }
+<h1 class="page-title">Eliminar país</h1>
+<div class="card p-4 shadow-sm"><p>¿Confirmas eliminar <strong>@Model.CountryName</strong>?</p>
+@if (Model.CityCount > 0) { <div class="alert alert-warning">Este país tiene @Model.CityCount ciudades relacionadas. La base de datos conserva su integridad referencial y no permite eliminarlo.</div> }
+<form asp-action="Delete" asp-route-id="@Model.CountryId" method="post"><button type="submit" class="btn btn-danger" disabled="@(Model.CityCount > 0)">Confirmar eliminación</button> <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a></form></div>
